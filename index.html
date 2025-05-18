@@ -1,57 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Conference ticket generator</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Conference ticket generator</title>
 
-  <!-- Form starts -->
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @font-face {
+        font-family: Inconsolata;
+        src: url(assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf);
+      }
+      :root {
+        --Neutral-0: hsl(0, 0%, 100%);
+        --Neutral-300: hsl(252, 6%, 83%);
+        --Neutral-500: hsl(245, 15%, 58%);
+        --Neutral-700: hsl(245, 19%, 35%);
+        --Neutral-900: hsl(248, 70%, 10%);
+        --Orange-500: hsl(7, 88%, 67%);
+        --Orange-700: hsl(7, 71%, 60%);
+      }
+      body {
+        font-family: Inconsolata;
+        color: var(--Neutral-0);
+        text-align: center;
+        background-image: url(assets/images/background-desktop.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
-  Your Journey to Coding Conf 2025 Starts Here!
+      main {
+        max-width: 55rem;
+      }
+      form {
+        justify-self: center;
+        max-width: 30rem;
+      }
 
-  Secure your spot at next year's biggest coding conference.
+      h1 {
+        font-weight: 800;
+        font-size: 60px;
+      }
 
-  Upload Avatar
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
+      h2 {
+        font-size: 20px;
+        color: var(--Neutral-300);
+        font-weight: 500;
+      }
+      p {
+        font-size: 20px;
+        margin: 0;
+      }
+      div p {
+        color: var(--Neutral-300);
+      }
+      .drop-zone {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        border-style: dashed;
+        border-color: var(--Neutral-300);
+        border-width: 1px;
+        padding: 10px;
+      }
+      .img-upload {
+        border: 1px solid var(--Neutral-500);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 5px;
+        padding: 5px;
+      }
+      .upload-tag {
+        font-size: 12px;
+        color: var(--Neutral-500);
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="assets/images/logo-full.svg" />
+      <!-- Form starts -->
+      <header>
+        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <h2>Secure your spot at next year's biggest coding conference.</h2>
+      </header>
 
-  Full Name
+      <form>
+        <p>Upload Avatar</p>
+        <div class="drop-zone" id="drop_zone" ondrop="handleDrop(event);">
+          <img class="img-upload" src="assets/images/icon-upload.svg" />
+          <p>Drag and drop or click to upload</p>
+        </div>
+        <div class="upload-tag">
+          <img src="assets/images/icon-info.svg" />
+          <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+        </div>
+        <p>Full Name</p>
+        <input type="text" />
+        <p>Email Address</p>
+        <input type="text" placeholder="example@email.com" />
+        <p>GitHub Username</p>
+        <input type="text" placeholder="@yourusername" />
+        <button>Generate My Ticket</button>
+      </form>
 
-  Email Address
-  example@email.com
+      <!-- Form ends -->
 
-  GitHub Username
-  @yourusername
+      <!-- Generated tickets starts -->
 
-  Generate My Ticket
+      Congrats,
+      <!-- Full Name -->! Your ticket is ready. We've emailed your ticket to
+      <!-- Email Address -->
+      and will send updates in the run up to the event. Coding Conf Jan 31, 2025
+      / Austin, TX
 
-  <!-- Form ends -->
+      <!-- Generated tickets ends -->
 
-  <!-- Generated tickets starts -->
-
-  Congrats, <!-- Full Name -->! Your ticket is ready.
-
-  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
-
-  <!-- Generated tickets ends -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </main>
+  </body>
 </html>
